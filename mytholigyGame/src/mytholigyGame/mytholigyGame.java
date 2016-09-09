@@ -32,31 +32,31 @@ public class mytholigyGame
 			}
 		public static void display()
 			{
-			for(int row=0; row<board.length; row++)
+			for(int z=0; z<board.length; z++)
 				{
-					for (int col=0; col<board[0].length; col++)
+					for (int row=0; row<board[0].length; row++)
 						{
-							for(int z=0; z<board[0][0].length; z++)
+							for(int col=0; col<board[0][0].length; col++)
 								{
-								board[row][col][z]=0;
-															
+								board[z][row][col]=1;							
 								}
 						}
 				}
-			board[1][2][3];
-			for(int row=0; row<board.length; row++)
+			board[0][1][2]=0;
+			for(int z=0; z<board.length; z++)
 				{
-					for (int col=0; col<board[0].length; col++)
+					for (int row=0; row<board[0].length; row++)
 						{
-							for(int z=0; z<board[0][0].length; z++)
+							for(int col=0; col<board[0][0].length; col++)
 								{
-								System.out.print(board[row][col][z]);
+								System.out.print(board[z][row][col]);
 															
 								}
 							System.out.println();
 						}
 					System.out.println();
 				}
+			
 			}
 
 	}
