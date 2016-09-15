@@ -6,7 +6,7 @@ public class Character
 		String monster1;
 		String monster2;
 		String monster3;
-		int numberOfmonsters;
+		int numberOfMonsters;
 			
 			public Character (String n, String m1, String m2, String m3, int nOfM)
 				{
@@ -14,7 +14,7 @@ public class Character
 					monster1 = m1;
 					monster2 = m2;
 					monster3 = m3;
-					numberOfmonsters = nOfM;
+					numberOfMonsters = nOfM;
 				}
 
 			public String getNation()
@@ -57,14 +57,14 @@ public class Character
 					this.monster3 = monster3;
 				}
 
-			public int getNumberOfmonsters()
+			public int getNumberOfMonsters()
 				{
-					return numberOfmonsters;
+					return numberOfMonsters;
 				}
 
-			public void setNumberOfmonsters(int numberOfmonsters)
+			public void setNumberOfMonsters(int numberOfmonsters)
 				{
-					this.numberOfmonsters = numberOfmonsters;
+					this.numberOfMonsters = numberOfmonsters;
 				}
 			
 

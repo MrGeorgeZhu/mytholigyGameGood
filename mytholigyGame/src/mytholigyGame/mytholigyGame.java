@@ -1,6 +1,7 @@
 package mytholigyGame;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class mytholigyGame
@@ -8,8 +9,7 @@ public class mytholigyGame
 		static String input;
 		static Scanner userInput = new Scanner(System.in);
 		static String [][][] board=new String [3][4][5];
-		static String [][][] hiddenBoard=new String [3][4][5];
-		static Character n = new Character ("", "", "", "", 3);
+		static Character c = new Character ("", "", "", "", 3);
 
 		public static void main(String[] args)
 			{
@@ -86,12 +86,16 @@ public class mytholigyGame
 				System.out.println(" |         |         |         |         |         |");
 				System.out.println(" ---------------------------------------------------");
 			}
+		public static void rulles()
+			{
+				//i will add rules here later
+			}
 		public static void startGame()
 			{
 				System.out.println("in order to start the game you first must know the game");
 				System.out.println("do you know how to play (1) yes (2) no");
-				int name= userInput.nextInt();
-				if (name==1)
+				int r= userInput.nextInt();
+				if (r==1)
 					{
 						System.out.println("sweet");
 					}
@@ -99,12 +103,67 @@ public class mytholigyGame
 					{
 						rulles();
 					}
-				System.out.println("who would you rather be greek/Roman or Norse");
-				System.out.println("type (1) for Greek/Roman (2) for norse");
+				System.out.println("who would you rather be greek or Roman");
+				System.out.println("type (1) for Greek (2) for Roman");
+				int nat= userInput.nextInt();
+				if(nat==2)
+					{
+						System.out.println("For the Senate and people of Rome!");
+						System.out.println("your 'characters' are Mars, Herculies, Cyclops");
+						c.setNation(c.getNation() + "Rome");
+						c.setMonster1(c.getMonster1() + "Mars");
+						c.setMonster2(c.getMonster2() + "Herculies");
+						c.setMonster3(c.getMonster3() + "Cyclops");	
+						ArrayList<gateCards> gateCards = new ArrayList<gateCards>();
+						gateCards.add(new gateCards("(1) Field of Battle", 100, 250));
+						gateCards.add(new gateCards("(2) Rome", 200, 0));
+						gateCards.add(new gateCards("(3) the Island of Scicely", 100, 100));
+						for (gateCards gc : gateCards)
+							{
+								System.out.println(gc.getName() + ": It adds " + gc.getPowerUp() + "power to all greeks and it subtracts " + gc.getPowerDown() + " power from all Romans.");
+							}
+						ArrayList<abilityCards> abilityCards = new ArrayList<abilityCards>();
+						abilityCards.add(new abilityCards("(1) legion", 500, 0));
+						abilityCards.add(new abilityCards("(2) dipped in the river sticks", 350, 0));
+						abilityCards.add(new abilityCards("(3) multi attack", 0, 300));
+						for (gateCards ac : gateCards)
+							{
+								System.out.println(ac.getName() + ": It adds " + ac.getPowerUp() + " power to all greeks and it subtracts " + ac.getPowerDown() + " power from all Romans.");
+							}
+					}
+				else
+					{
+						System.out.println("for Sparta! and the Greeks!");
+						System.out.println("your 'characters' are Athena, Achilles, Hydra");
+						c.setNation(c.getNation() + "greek");
+						c.setMonster1(c.getMonster1() + "Athena");
+						c.setMonster2(c.getMonster2() + "Achilles");
+						c.setMonster3(c.getMonster3() + "Hydra");	
+						System.out.println("with each character you get two cards. One set of cards are your gate cards");
+						System.out.println("the other are your ability card");
+						System.out.println("these are your gate cards ");
+						ArrayList<gateCards> gateCards = new ArrayList<gateCards>();
+						gateCards.add(new gateCards("(1) Athens", 300, 0));
+						gateCards.add(new gateCards("(2) troy", 50, 200));
+						gateCards.add(new gateCards("(3) Tartorus", 0, 300));
+						for (gateCards gc : gateCards)
+							{
+								System.out.println(gc.getName() + ": It adds " + gc.getPowerUp() + " power to all greeks and it subtracts " + gc.getPowerDown() + " power from all Romans.");
+							}
+						System.out.println("these are your ability cards!");
+						ArrayList<abilityCards> abilityCards = new ArrayList<abilityCards>();
+						abilityCards.add(new abilityCards("(1) aegis", 500, 0));
+						abilityCards.add(new abilityCards("(2) dipped in the river sticks", 350, 0));
+						abilityCards.add(new abilityCards("(3) multi attack", 0, 300));
+						for (gateCards ac : gateCards)
+							{
+								System.out.println(ac.getName() + ": It adds " + ac.getPowerUp() + " power to all greeks and it subtracts " + ac.getPowerDown() + " power from all Romans.");
+							}
+					}
 				
 				
 			}
-		public static void rulles()
+		public static void startGame()
 			{
 				//i will add rules here later
 			}
