@@ -16,6 +16,7 @@ public class mytholigyGame
 				//wannaPlay();
 				displayBoard();
 				startGame();
+				game();
 			}
 		public static void wannaPlay()
 			{
@@ -56,6 +57,9 @@ public class mytholigyGame
 									board[2][row][col]="     ";							
 									}
 							}
+			}
+		public static void Board()
+		{
 				//cards = 7 char
 				//enemies = 3 char
 				//your characters = 5 char
@@ -82,11 +86,11 @@ public class mytholigyGame
 				System.out.println(" |         |         |         |         |         |");
 				System.out.println(" | "+board[0][3][0]+" | "+board[0][3][1]+" | "+board[0][3][2]+" | "+board[0][3][3]+" | "+board[0][3][4]+" |");
 				System.out.println("D|   "+board[1][3][0]+"   |   "+board[1][3][1]+"   |   "+board[1][3][2]+"   |   "+board[1][3][3]+"   |   "+board[1][3][4]+"   |");
-				System.out.println(" |  "+board[2][3][0]+"  |  "+board[2][3][1]+"  |  "+board[2][3][2]+"  |  "+board[2][3][3]+"  |    "+board[2][3][4]+"    |");
+				System.out.println(" |  "+board[2][3][0]+"  |  "+board[2][3][1]+"  |  "+board[2][3][2]+"  |  "+board[2][3][3]+"  |  "+board[2][3][4]+"  |");
 				System.out.println(" |         |         |         |         |         |");
 				System.out.println(" ---------------------------------------------------");
 			}
-		public static void rulles()
+		public static void rules()
 			{
 				//i will add rules here later
 			}
@@ -101,7 +105,7 @@ public class mytholigyGame
 					}
 				else 
 					{
-						rulles();
+						rules();
 					}
 				System.out.println("who would you rather be greek or Roman");
 				System.out.println("type (1) for Greek (2) for Roman");
@@ -126,7 +130,7 @@ public class mytholigyGame
 						abilityCards.add(new abilityCards("(1) legion", 500, 0));
 						abilityCards.add(new abilityCards("(2) dipped in the river sticks", 350, 0));
 						abilityCards.add(new abilityCards("(3) multi attack", 0, 300));
-						for (gateCards ac : gateCards)
+						for (abilityCards ac : abilityCards)
 							{
 								System.out.println(ac.getName() + ": It adds " + ac.getPowerUp() + " power to all greeks and it subtracts " + ac.getPowerDown() + " power from all Romans.");
 							}
@@ -155,17 +159,127 @@ public class mytholigyGame
 						abilityCards.add(new abilityCards("(1) aegis", 500, 0));
 						abilityCards.add(new abilityCards("(2) dipped in the river sticks", 350, 0));
 						abilityCards.add(new abilityCards("(3) multi attack", 0, 300));
-						for (gateCards ac : gateCards)
+						for (abilityCards ac : abilityCards)
 							{
 								System.out.println(ac.getName() + ": It adds " + ac.getPowerUp() + " power to all greeks and it subtracts " + ac.getPowerDown() + " power from all Romans.");
 							}
+						board[0][1][2]="Athens ";	
+						board[1][1][2]="Mrs";
+						board[2][1][2]="Hydra";
+						Board();
 					}
 				
 				
 			}
-		public static void startGame()
+		public static void game()
 			{
-				//i will add rules here later
+				System.out.println("all right lets start the game");
+				boolean turn = true;
+				while(turn)
+					{
+						System.out.println("do you want to place a card (1) yes (2) no");
+						int nat= userInput.nextInt();
+						if (nat==1)
+							{
+								System.out.println("which card would you like to place");
+								ArrayList<gateCards> gateCards = new ArrayList<gateCards>();
+								gateCards.add(new gateCards("(1) Athens", 300, 0));
+								gateCards.add(new gateCards("(2) troy", 50, 200));
+								gateCards.add(new gateCards("(3) Tartorus", 0, 300));
+								for (gateCards gc : gateCards)
+									{
+										System.out.println(gc.getName() + ": It adds " + gc.getPowerUp() + " power to all greeks and it subtracts " + gc.getPowerDown() + " power from all Romans.");
+									}
+								int ble= userInput.nextInt();
+								if (ble==1)
+									{
+										int rowChoice = 0;
+										System.out.println("were would you like to place the Athens gate card. please type the row then the colom");
+										System.out.println("for example A1");
+										String bwa = userInput.nextLine();
+										switch (bwa.substring(0,1))
+										{
+										case "a":
+										case "A":
+											rowChoice = 0;
+											break;
+										case "b":
+										case "B":
+											rowChoice = 1;
+											break;
+										case "c":
+										case "C":
+											rowChoice = 2;
+											break;
+										case "d":
+										case "D":
+											rowChoice = 3;
+											break;
+										}
+										int colChoice=Integer.parseInt(bwa.substring(1))-1;
+										board[0][rowChoice][colChoice]= "Athens ";
+										Board();
+									}
+								if (ble==2)
+									{
+										int rowChoice = 0;
+										System.out.println("were would you like to place the Troy gate card please type the row then the column");
+										System.out.println("for example A1");
+										String bwa = userInput.nextLine();
+										switch (bwa.substring(0,1))
+										{
+										case "a":
+										case "A":
+											rowChoice = 0;
+											break;
+										case "b":
+										case "B":
+											rowChoice = 1;
+											break;
+										case "c":
+										case "C":
+											rowChoice = 2;
+											break;
+										case "d":
+										case "D":
+											rowChoice = 3;
+											break;
+										}
+										int colChoice=Integer.parseInt(bwa.substring(1))-1;
+										board[0][rowChoice][colChoice]= " Troy  ";
+										Board();
+									}
+								if (ble==3)
+									{
+										int rowChoice = 0;
+										System.out.println("were would you like to place the Tartorus gate card please type the row then the colom");
+										System.out.println("for example A1");
+										String bwa = userInput.nextLine();
+										switch (bwa.substring(0,1))
+										{
+										case "a":
+										case "A":
+											rowChoice = 0;
+											break;
+										case "b":
+										case "B":
+											rowChoice = 1;
+											break;
+										case "c":
+										case "C":
+											rowChoice = 2;
+											break;
+										case "d":
+										case "D":
+											rowChoice = 3;
+											break;
+										}
+										int colChoice=Integer.parseInt(bwa.substring(1))-1;
+										board[0][rowChoice][colChoice]= "Tartors";
+										Board();
+									}
+							}
+					}
 			}
 
 	}
