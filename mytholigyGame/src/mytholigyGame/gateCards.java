@@ -2,9 +2,9 @@ package mytholigyGame;
 
 public class gateCards
 	{
-		String name;
-		int powerUp; 
-		int powerDown; 
+		private String name;
+		private int powerUp; 
+		private int powerDown; 
 		
 		public gateCards(String nm, int pu, int pd)
 		{
