@@ -12,7 +12,7 @@ public class mytholigyGame
 		static Athena a = new Athena ("Greek", 400, "Aegis", "god");
 		static Achilles Ach = new Achilles ("Greek", 300, "dipped int the river sticks", "Hero");
 		static Hydra h = new Hydra ("Greek", 250, "Multi attack", "monster");
-
+//change
 		public static void main(String[] args)
 			{
 				//wannaPlay();
