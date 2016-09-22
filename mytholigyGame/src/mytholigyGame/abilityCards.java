@@ -1,12 +1,12 @@
 package mytholigyGame;
 
-public class abilityCard
+public class abilityCards
 	{
 		private String name;
 		private int powerUp; 
 		private int powerDown; 
 		
-		public abilityCard(String nm, int pu, int pd)
+		public abilityCards(String nm, int pu, int pd)
 		{
 			name = nm;
 			powerUp = pu;

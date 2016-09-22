@@ -1,6 +1,6 @@
 package mytholigyGame;
 
-//good job
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -195,7 +195,8 @@ public class mytholigyGame
 										int rowChoice = 0;
 										System.out.println("were would you like to place the Athens gate card. please type the row then the colom");
 										System.out.println("for example A1");
-										String bwa = userInput.nextLine();
+										Scanner userInput1 = new Scanner(System.in);
+										String bwa = userInput1.nextLine();
 										switch (bwa.substring(0,1))
 											{
 											case "a":
@@ -224,7 +225,8 @@ public class mytholigyGame
 										int rowChoice = 0;
 										System.out.println("were would you like to place the Troy gate card please type the row then the column");
 										System.out.println("for example A1");
-										String bwa = userInput.nextLine();
+										Scanner userInput2 = new Scanner(System.in);
+										String bwa = userInput2.nextLine();
 										switch (bwa.substring(0,1))
 											{
 											case "a":
@@ -253,7 +255,8 @@ public class mytholigyGame
 										int rowChoice = 0;
 										System.out.println("were would you like to place the Tartorus gate card please type the row then the colom");
 										System.out.println("for example A1");
-										String bwa = userInput.nextLine();
+										Scanner userInput3 = new Scanner(System.in);
+										String bwa = userInput3.nextLine();
 										switch (bwa.substring(0,1))
 										{
 										case "a":
