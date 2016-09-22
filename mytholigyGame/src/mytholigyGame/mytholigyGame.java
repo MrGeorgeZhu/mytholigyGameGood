@@ -1,6 +1,6 @@
 package mytholigyGame;
 
-//good job!
+//good job
 import java.util.ArrayList;
 import java.util.Scanner;
 
